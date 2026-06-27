@@ -35,13 +35,13 @@ function run(cmd, args) {
 }
 
 function runDev() {
-  const child = spawn('npx', ['astro', 'dev', ...rest], { stdio: 'pipe' });
+  const child = spawn('npx', ['astro', 'dev', '--port', '54485', ...rest], { stdio: 'pipe' });
 
   child.stdout.on('data', (data) => {
     const lines = data.toString().split('\n');
     for (const line of lines) {
-      // Only show: startup, local URL, and errors
-      if (/(ready|Local|error|Error|fail|500)/.test(line)) {
+      // Pass through: INFO/WARN/ERROR lines, banner, and errors
+      if (/(INFO |WARN |ERROR|error|Error|fail|500|█)/.test(line)) {
         const clean = line
           .replace(/^\d{2}:\d{2}:\d{2}\s*/, '')   // strip timestamp
           .trim();

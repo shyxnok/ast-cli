@@ -1,13 +1,20 @@
 {
-  "name": "ast-cli",
+  "name": "ast-halcyon",
   "version": "1.0.0",
-  "description": "Shortcut CLI for Astro — like hexo, but for Astro",
+  "description": "Astro shortcut CLI + Halcyon theme — like hexo, but for Astro",
+  "type": "module",
   "bin": {
-    "ast": "./cli.js"
+    "ast": "./cli.cjs"
+  },
+  "main": "./theme.mjs",
+  "exports": {
+    ".": "./theme.mjs",
+    "./theme": "./theme.mjs"
   },
   "files": [
-    "cli.js"
+    "cli.cjs",
+    "theme.mjs"
   ],
-  "keywords": ["astro", "cli", "blog", "shortcut"],
+  "keywords": ["astro", "astro-theme", "cli", "blog", "halcyon", "hexo-style"],
   "license": "MIT"
 }
