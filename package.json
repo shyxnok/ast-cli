@@ -1,0 +1,13 @@
+{
+  "name": "ast-cli",
+  "version": "1.0.0",
+  "description": "Shortcut CLI for Astro — like hexo, but for Astro",
+  "bin": {
+    "ast": "./cli.js"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "keywords": ["astro", "cli", "blog", "shortcut"],
+  "license": "MIT"
+}
